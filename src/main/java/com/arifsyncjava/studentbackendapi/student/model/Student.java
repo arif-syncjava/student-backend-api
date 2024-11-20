@@ -4,5 +4,5 @@ public record Student(
         int studentId,
         String name,
         String email,
-        String majorSubject,
+        String department,
         String phoneNumber) { }
