@@ -1,4 +1,22 @@
 package com.arifsyncjava.studentbackendapi.student.payload;
 
-public record StudentResponse() {
+import com.arifsyncjava.studentbackendapi.student.model.Student;
+
+public record StudentResponse(
+        String studentId,
+        String name,
+        String email,
+        String department
+) {
+
+    public StudentResponse (Student student) {
+        this(
+                student.studentId(),
+                student.name(),
+                student.email(),
+                student.department()
+
+        );
+    }
+
 }
