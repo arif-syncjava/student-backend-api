@@ -19,4 +19,19 @@ public record StudentResponse(
         );
     }
 
+    public StudentResponse (StudentUpdateRequest student) {
+        this(
+                student.studentId(),
+                student.request().name(),
+                student.request().email(),
+                student.request().department()
+
+        );
+    }
+
+
+
+
+
+
 }
