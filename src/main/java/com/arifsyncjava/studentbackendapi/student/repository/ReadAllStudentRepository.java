@@ -23,9 +23,9 @@ public class ReadAllStudentRepository implements Repository<Void, List<Student>>
 
     @Override
     public List<Student> execute(Void input) {
-        var studentList;
+
         try {
-            studentList = jdbc.sql("SELECT student_id,name,email,phoneNumber,department FROM Students")
+            return jdbc.sql("SELECT student_id,name,email,phoneNumber,department FROM Students")
                     .query(Student.class)
                     .list();
 
@@ -36,7 +36,6 @@ public class ReadAllStudentRepository implements Repository<Void, List<Student>>
         }
 
 
-        return studentList;
     }
 
 
